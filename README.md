@@ -11,6 +11,7 @@ AAI][org-elixir-cloud] stack.
 
 * [CWL][res-cwl]
   * [Hashsplitter workflow](cwl/hashsplitter_workflow/README.md)
+  * [MSA compare workflow](cwl/msa_compare_workflow/README.md)
 
 ## Contributing
 
