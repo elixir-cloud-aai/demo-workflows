@@ -4,13 +4,13 @@
 
 ## Synopsis
 
-Collection of workflows used for testing and demonstrating the [ELIXIR Cloud & 
+Collection of workflows used for testing and demonstrating the [ELIXIR Cloud &
 AAI][org-elixir-cloud] stack.
 
 ## Table of contents
 
 * [CWL][res-cwl]
-  * coming soon
+  * [Hashsplitter workflow](cwl/hashsplitter_workflow/README.md)
 
 ## Contributing
 
