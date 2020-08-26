@@ -1,0 +1,53 @@
+cwlVersion: v1.0
+class: CommandLineTool
+
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: DockerRequirement
+    dockerPull: biocontainers/bwa:v0.7.12_cv3
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.reference_genome) 
+  - class: ResourceRequirement
+    outdirMin: 10500
+    tmpdirMin: 10500
+
+hints:
+  - class: ResourceRequirement
+    ramMin: 30000   
+    coresMin: 12
+baseCommand:
+- bwa
+- index
+
+
+inputs:
+  algorithm:
+    type: string?
+    inputBinding:
+      prefix: -a
+    doc: |
+       BWT construction algorithm: bwtsw or is (Default: auto)
+  reference_genome:
+    type: File
+    inputBinding:
+      # valueFrom: $(self.basename)
+      position: 4
+  block_size:
+    type: int?
+    inputBinding:
+      position: 2
+      prefix: -b
+
+outputs:
+  output:
+    type: File
+    outputBinding:
+      glob: "*.fa"
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+
