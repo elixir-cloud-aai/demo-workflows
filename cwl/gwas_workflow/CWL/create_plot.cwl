@@ -7,12 +7,20 @@ doc: "create manhattan plot"
 
 hints:
   - class: DockerRequirement
-    dockerPull: gwas_with_cwl:v1
-
+    dockerPull: dnastack/plink:1.9
   - class: ResourceRequirement
     coresMin: 2
     ramMin: 8
     outdirMin: 20
+
+requirements:
+  InitialWorkDirRequirement:
+    listing:
+      - entryname: create_plot.sh
+        entry: |-
+          output_basename=\$(basename $1 .assoc.logistic)
+          chromosome=\$(head -2 $1 | tail -1 | cut -d "," -f 1)
+          manhattan_plot.py -i $1 -o $output_basename.png -c $chromosome
 
 inputs:
   - id: logistic
@@ -26,4 +34,4 @@ outputs:
     outputBinding:
       glob: "*.png"
 
-baseCommand: ["create_plot.sh"]
+baseCommand: ["sh", "create_plot.sh"]
