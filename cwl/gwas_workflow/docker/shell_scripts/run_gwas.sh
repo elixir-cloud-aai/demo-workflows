@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#args: vcf ids sex phenotypes covariates 
+# args: vcf ids sex phenotypes covariates
 
 output_basename=$(basename $1 .vcf.gz)
 
