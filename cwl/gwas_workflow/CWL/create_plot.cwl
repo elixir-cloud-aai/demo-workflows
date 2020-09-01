@@ -7,12 +7,12 @@ doc: "create manhattan plot"
 
 hints:
   - class: DockerRequirement
-    dockerPull: gwas_with_cwl:v1
+    dockerPull: elixircloud/plink:1.9-cwl-20200901
 
   - class: ResourceRequirement
     coresMin: 2
-    ramMin: 8
-    outdirMin: 20
+    ramMin: 1024
+    outdirMin: 1024
 
 inputs:
   - id: logistic

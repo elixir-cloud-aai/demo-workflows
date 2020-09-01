@@ -7,12 +7,12 @@ doc: "parse metadata"
 
 hints:
   - class: DockerRequirement
-    dockerPull: dnastack/plink:1.9
+    dockerPull: elixircloud/plink:1.9-cwl-20200901
 
   - class: ResourceRequirement
     coresMin: 1
-    ramMin: 4
-    outdirMin: 10
+    ramMin: 1024
+    outdirMin: 1024
 
 inputs:
   - id: metadata

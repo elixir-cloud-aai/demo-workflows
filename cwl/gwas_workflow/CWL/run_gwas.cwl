@@ -7,12 +7,12 @@ doc: "run plink on vcf file"
 
 hints:
   - class: DockerRequirement
-    dockerPull: gwas_with_cwl:v1
+    dockerPull: elixircloud/plink:1.9-cwl-20200901
 
   - class: ResourceRequirement
     coresMin: 1
-    ramMin: 4
-    outdirMin: 10
+    ramMin: 1024
+    outdirMin: 1024
 
 inputs:
   - id: variants

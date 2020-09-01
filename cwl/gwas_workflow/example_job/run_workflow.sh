@@ -1,3 +1,5 @@
 #!/bin/bash
 
-cwltool ../CWL/gwas_workflow.cwl gwas_test.yaml
+cwltool \
+    ../CWL/gwas_workflow.cwl \
+    gwas_test.yaml
