@@ -12,7 +12,7 @@ hints:
   - class: ResourceRequirement
     coresMin: 1
     ramMin: 1024
-    outdirMin: 1024
+    outdirMin: 25600
 
 inputs:
   - id: metadata
