@@ -9,10 +9,15 @@ AAI][org-elixir-cloud] stack.
 
 ## Table of contents
 
-* [CWL][res-cwl]
-  * [Hashsplitter workflow](cwl/hashsplitter_workflow/README.md)
-  * [MSA compare workflow](cwl/msa_compare_workflow/README.md)
-  * [Rare diseases workflow](cwl/rare_diseases_workflow/README.md)
+* [GWAS workflow](gwas_workflow)
+  * [CWL](gwas_workflow/cwl)
+  * [Snakemake](gwas_workflow/smk)
+* [Hashsplitter workflow](hashsplitter_workflow)
+  * [CWL](hashsplitter_workflow/cwl/README.md)
+* [MSA compare workflow](msa_compare_workflow)
+  * [CWL](msa_compare_workflow/cwl/README.md)
+* [Rare diseases workflow](rare_diseases_workflow)
+  * [CWL](rare_diseases_workflow/cwl/README.md)
 
 ## Contributing
 
