@@ -15,9 +15,9 @@ AAI][org-elixir-cloud] stack.
 * [Hashsplitter workflow](hashsplitter_workflow)
   * [CWL](hashsplitter_workflow/cwl/README.md)
 * [MSA compare workflow](msa_compare_workflow)
-  * [MSA compare workflow](msa_compare_workflow/cwl/README.md)
+  * [CWL](msa_compare_workflow/cwl/README.md)
 * [Rare diseases workflow](rare_diseases_workflow)
-  * [Rare diseases workflow](rare_diseases_workflow/cwl/README.md)
+  * [CWL](rare_diseases_workflow/cwl/README.md)
 
 ## Contributing
 
