@@ -64,5 +64,28 @@ When running locally on minikube, add your "hosts" defined in Ingress objects fo
 192.168.64.5 minio.tesk.svc.cluster.local
 ```
 The host name as above for minio will ensure that the service is visible under the same URL to `cwl-tes` externally and TESK from within the cluster.
+`192.168.64.5` is the example IP of minikube. Check yours by running:
+```
+minikube ip
+```
 
 ### Running the example workflow
+
+```
+git clone https://github.com/elixir-cloud-aai/demo-workflows.git
+cd demo-workflows/hashsplitter-workflow/cwl
+```
+Replace the contents of `hashsplitter-test.yml` with
+```
+input:
+  class: File
+  path: s3://tesk-1/photo.jpg
+
+```
+where `tesk-1` is your bucket and `photo.jpg` is an example file you had previously uploaded to the bucket.
+
+Run:
+```
+cwl-tes --remote-storage-url http://minio.tesk.svc.cluster.local/tesk-1 --tes http://tesk hashsplitter-workflow.cwl hashsplitter-test.yml
+```
+
