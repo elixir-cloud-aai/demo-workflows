@@ -10,9 +10,41 @@ The example was only ran at minikube. To avoid problems, I ran into, increase th
 
 ### S3
 
+S3-compatible storage was provided with MinIO installed with [the official Operator](https://docs.min.io/minio/k8s/deployment/deploy-minio-operator.html#deploy-operator-kubernetes) into minikube.
+
+Notes from the installation:
+There were no issues with installation of the Operator itself.
+When deploying the tenant:
+- The separate namespace `tesk` was created for the tenant.
+- Despite installing the tenant to a one node only K8s, it was necessary to keep the default of 4 servers, each with one volume. The installation of a single server tenant did not work. In order to deploy 4 servers node affinity was disabled (during installation via the console).
+- The default TLS was disabled to simplify exposing MinIO to outside of the cluster.
+
+The tenant service was then exposed via an Ingress under the same host name as the service is visible internally within the cluster:
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minio-ingress
+  namespace: tesk
+spec:
+  rules:
+  - host: "minio.tesk.svc.cluster.local"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: minio
+            port:
+              number: 80
+```
+There might be more straightforward ways of instaling MinIO into minikube.
+Whichever way you install and expose your MinIO service, create a `tesk-1` bucket and upload an example file (`photo.jpg`) to it.
+
 ### cwl-tes
 
-Installation if `cwl-tes` with S3 support based on PR#38.
+Installation of `cwl-tes` with S3 support based on PR#38.
 ```
 #checkout PR
 git clone https://github.com/ohsu-comp-bio/cwl-tes.git
