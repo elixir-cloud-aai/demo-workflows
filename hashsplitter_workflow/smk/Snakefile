@@ -1,0 +1,67 @@
+from pathlib import Path
+
+
+localrules:
+    all,
+
+
+rule all:
+    input:
+        "results/unify/output",
+
+
+rule md5:
+    input:
+        config["input"],
+    output:
+        f"results/md5/output",
+    container:
+        "docker://python:3.10-slim-bullseye"
+    shell:
+        """
+        openssl dgst -md5 {input} > {output}
+        """
+
+
+rule sha1:
+    input:
+        config["input"],
+    output:
+        f"results/sha1/output",
+    container:
+        "docker://python:3.10-slim-bullseye"
+    shell:
+        """
+        openssl dgst -sha1 {input} > {output}
+        """
+
+
+rule whirlpool:
+    input:
+        config["input"],
+    output:
+        f"results/whirlpool/output",
+    container:
+        "docker://python:3.10-slim-bullseye"
+    shell:
+        """
+        openssl dgst -whirlpool {input} > {output}
+        """
+
+
+rule_name = "unify"
+
+
+rule unify:
+    input:
+        md5="results/md5/output",
+        sha="results/sha1/output",
+        whirlpool="results/whirlpool/output",
+    output:
+        f"results/unify/output",
+    container:
+        "docker://python:3.10-slim-bullseye"
+    shell:
+        """
+        cat {input.md5} {input.sha} {input.whirlpool} > {output}
+        """

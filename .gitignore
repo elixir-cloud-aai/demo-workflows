@@ -221,3 +221,5 @@ tags
 !.gitkeep
 .vscode/
 .idea/*
+.snakemake
+results/
