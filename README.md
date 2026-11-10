@@ -1,5 +1,14 @@
 # ELIXIR Cloud & AAI demo workflows
 
+> [!WARNING]
+> This repository is **retired** and archived: it is kept for the record only
+> and is not maintained. It was last changed in 2022, and its run scripts
+> point to TES services and FTP servers that no longer exist, and to a fork
+> of `cwl-tes` from 2020. The workflow files may still serve as examples, but
+> they are not tested against the current products. See the
+> [Demos page](https://docs.elixir-on.cloud/en/latest/demos/#retired-demos) of the Documentation
+> Hub for details and for the current demos.
+
 [![License][badge-license]][badge-url-license]
 
 ## Synopsis
