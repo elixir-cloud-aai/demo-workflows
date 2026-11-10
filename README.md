@@ -1,5 +1,14 @@
 # ELIXIR Cloud & AAI demo workflows
 
+> [!WARNING]
+> This repository is **retired**: it is kept for the record only and is not
+> maintained. Its workflows and run scripts were last changed in 2022; the
+> run scripts point to TES services and FTP servers that no longer exist, and
+> to a fork of `cwl-tes` from 2020. The workflow files may still serve as
+> examples, but they are not tested against the current products. See the
+> [Demos page](https://docs.elixir-on.cloud/en/latest/demos/#retired-demos)
+> of the Documentation Hub for details and for the current demos.
+
 [![License][badge-license]][badge-url-license]
 
 ## Synopsis
@@ -21,10 +30,11 @@ AAI][org-elixir-cloud] stack.
 
 ## Contributing
 
-This project is a community effort and lives off your contributions, be it in
-the form of bug reports, feature requests, discussions, or fixes and other code
-changes. Please refer to our organization's [contributing
-guidelines][res-elixir-cloud-contributing] if you are interested to contribute.
+This repository is retired and no longer takes contributions. To propose a
+demo or report one that no longer works, see the
+[Demos page](https://docs.elixir-on.cloud/en/latest/demos/#add-a-demo). For
+contributions to ELIXIR Cloud & AAI in general, refer to our organization's
+[contributing guidelines][res-elixir-cloud-contributing].
 Please mind the [code of conduct][res-elixir-cloud-coc] for all interactions
 with the community.
 
